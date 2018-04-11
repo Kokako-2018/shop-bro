@@ -17,8 +17,7 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "node server",
-    "dev": "node server & webpack --watch"
+    "start": "node server & webpack --watch"
   },
   "dependencies": {
     "express": "^4.16.2",
