@@ -2,7 +2,7 @@ import React from 'react'
 
 const App = () => {
     return (
-        <h1>Tena koe e hoa</h1>
+        <h1>Shop-Bro</h1>
     )
 }
 
