@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kokako-2018/shop-bro.git"
+    "url": "https://github.com/Kokako-2018/shop-bro.git"
   },
   "babel": {
     "presets": [
@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "express": "^4.16.2",
-    "webpack": "^4.5.0"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
