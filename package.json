@@ -21,7 +21,8 @@
     "dev": "node server & webpack --watch"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "webpack": "^4.5.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -29,7 +30,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "webpack": "^3.10.0"
+    "react-dom": "^16.2.0"
   }
 }
