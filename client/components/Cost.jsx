@@ -21,7 +21,7 @@ class Cost extends React.Component {
     render() {
       return <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} type="text" name="Cost" placeholder="Item Cost" />
-        <input type="submit" value="Add item"/>
+        <input type="submit" value="Calculate cost"/>
       </form>
     }
 }

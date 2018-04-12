@@ -7,33 +7,40 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: 1, item: 'Apples'
-        }, {
-            id: 100, cost: ''
+            items: [
+                {
+                    id: 1, item: ''
+                },
+                {
+                    id: 2, cost: 0
+                }
+            ]
         }
-
-        this.makeShopForm = this.makeShopForm.bind(this)
-        this.makeCostForm = this.makeCostForm.bind(this)
+        this.makeItemForm = this.makeItemForm.bind(this)
+        // this.makeCostForm = this.makeCostForm.bind(this)
     }
 
     makeItemForm(item) {
-        item.id = item.length + 1
-        item.push(item)
-        this.setState({item})
+        const items = thiis.state.items
+        item.id = items.length + 1
+        items.push(item)
+        console.log(item)
+        this.setState({items})
     }
 
-    makeCostForm(cost) {
-        cost.id = cost.length + 1
-        cost.push(cost)
-        this.setState({cost})
-    }
+    // makeCostForm(cost) {
+    //     cost.id = cost.length + 1
+    //     cost.push(cost)
+    //     console.log(cost)
+    //     this.setState({cost})
+    // }
 
     render() {
         return <div>
             <h1>Shop-Bro</h1>
             <hr />
             <Item item={this.item} />
-            <Cost cost={this.cost} />
+            {/* <Cost cost={this.cost} /> */}
             </div>
     }
 }
