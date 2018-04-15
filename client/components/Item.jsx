@@ -22,19 +22,14 @@ class Item extends React.Component {
       return <div>
          <div class="column">
            <div class="field has-addons">
-             <p class="control">
-              <span class="icon has-text-success">
-                <i class="fas fa-check-square"></i>
-              </span>
-             </p>
-             <p class="control">
-               <input onChange={this.handleChange} class="input" type="text"  name="Add shopping item" placeholder="Add shopping item"/>
-             </p>
-             <p class="control">
+             <div class="control">
+               <input onChange={this.handleChange} class="input" type="text"  name="Add item" placeholder="Add item"/>
+             </div>
+             <div class="control">
                <a class="button" type="submit" value="add item">
                  Add
                </a>
-             </p>
+             </div>
            </div>
          </div>
         {/* <input onChange={this.handleChange} type="text" name="Item" placeholder="Shop Item" /> */}

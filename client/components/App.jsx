@@ -37,15 +37,15 @@ class App extends React.Component {
 
     render() {
         return <div>
-            <section class="hero is-info is-medium">
+            <section class="hero is-medium" id="hero-header">
                 {/* <!-- Hero head: will stick at the top --> */}
                 <div class="hero-head">
                     <nav class="navbar">
                     <div class="container">
                         <div class="navbar-brand">
                             <div class="container">
-                                <h1 class="title is-2">
-                                    SHOP-BRO
+                                <h1 class="title is-2" id="title-font">
+                                    Shop-Bro
                                 </h1>
                             </div>
                             <span class="navbar-burger burger" data-target="navbarMenuHeroA">
@@ -71,7 +71,7 @@ class App extends React.Component {
                     </nav>
                 </div>
                 {/* <!-- Hero content: will be in the middle --> */}
-                <hr />
+                {/* <hr /> */}
                 <div class="hero-body">
                     <div class="container has-text-centered">
                     <h2 class="subtitle">
@@ -82,11 +82,11 @@ class App extends React.Component {
             </section>
 
             {/* Start of list part */}
-            <div class="columns is-multiline is-mobile">
-              <div class="column">
+            <div class="columns is-gapless is-multiline is-mobile">
+              <div class="column is-half">
                 <Item item={this.item} />
               </div>
-              <div class="column is-one-quarter">
+              <div class="column is-half">
                 <Cost cost={this.cost} />
               </div>
             </div>
