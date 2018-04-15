@@ -28,7 +28,7 @@ class Cost extends React.Component {
              </div>
              <div class="control">
                <a class="button" type="submit" value="=">
-                 Spend
+                 Spent
                </a>
              </div>
            </div>

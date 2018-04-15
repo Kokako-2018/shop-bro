@@ -40,8 +40,8 @@ class App extends React.Component {
             <section class="hero is-medium" id="hero-header">
                 {/* <!-- Hero head: will stick at the top --> */}
                 <div class="hero-head">
-                    <nav class="navbar">
-                    <div class="container">
+                    <nav class="navbar" id="navbar-bottom">
+                     <div class="container">
                         <div class="navbar-brand">
                             <div class="container">
                                 <h1 class="title is-2" id="title-font">
@@ -67,19 +67,38 @@ class App extends React.Component {
                             </a>
                         </div>
                         </div>
-                    </div>
+                     </div>
                     </nav>
                 </div>
                 {/* <!-- Hero content: will be in the middle --> */}
                 {/* <hr /> */}
                 <div class="hero-body">
                     <div class="container has-text-centered">
-                    <h2 class="subtitle">
+                    <h2 class="subtitle" id="subtitle">
                     Making sure you stick to your shopping budget so you can smash your savings goals!
                     </h2>
                     </div>
                 </div>
             </section>
+            
+            
+            <div class="column">
+                <div class="field has-addons">
+                    <div class="control is-centered">
+                        <input onChange={this.handleChange} class="input" type="text"  name="Spend amount" placeholder="Enter your budget"/>
+                    </div>
+                    <div class="control">
+                        <a class="button" type="submit" value="=">
+                        Spend
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="column">
+              <progress class="progress is-success is-small" value="5" max="100">60%</progress>
+            </div>
 
             {/* Start of list part */}
             <div class="columns is-gapless is-multiline is-mobile">
