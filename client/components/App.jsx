@@ -40,7 +40,7 @@ class App extends React.Component {
             <section class="hero is-medium" id="hero-header">
                 {/* <!-- Hero head: will stick at the top --> */}
                 <div class="hero-head">
-                    <nav class="navbar" id="navbar-bottom">
+                    <nav class="navbar is-fixed-bottom" id="navbar-bottom">
                      <div class="container">
                         <div class="navbar-brand">
                             <div class="container">
