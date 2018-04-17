@@ -24,10 +24,10 @@ class Cost extends React.Component {
         <div class="column">
            <div class="field has-addons">
              <div class="control">
-               <input onChange={this.handleChange} class="input" type="text"  name="Add price" placeholder="$--.--"/>
+               <input onChange={this.handleChange} class="input is-large" type="text"  name="Add price" placeholder="$--.--"/>
              </div>
              <div class="control">
-               <a class="button" type="submit" value="=">
+               <a class="button is-large" type="submit" value="=">
                  Spent
                </a>
              </div>

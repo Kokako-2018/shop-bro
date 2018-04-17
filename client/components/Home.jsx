@@ -1,9 +1,9 @@
 import React from 'react'
-
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 const Home = () => {
-  return (
-    <div>
+    return (
+      <div>
         <section class="hero is-medium" id="hero-header">
             {/* <!-- Hero head: will stick at the top --> */}
             <div class="hero-head">
@@ -11,7 +11,8 @@ const Home = () => {
                     <div class="container">
                     <div class="navbar-brand">
                         <div class="container">
-                            <h1 class="title is-2" id="title-font">
+
+                            <h1 class="title is-1" id="title-font">
                                 Shop-Bro
                             </h1>
                         </div>
@@ -41,15 +42,18 @@ const Home = () => {
             {/* <hr /> */}
             <div class="hero-body">
                 <div class="container has-text-centered">
-                <h2 class="subtitle" id="subtitle">
+
+                <h2 class="subtitle is-5" id="subtitle">
+
                 Making sure you stick to your shopping budget so you can smash your savings goals!
                 </h2>
                 </div>
             </div>
         </section>
-    </div>
-  )    
+
+        <Link to = {'/savings'} />
+      </div>
+    )
 }
 
-
-export default Home 
+export default Home
