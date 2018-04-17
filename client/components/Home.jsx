@@ -4,7 +4,7 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom'
 const Home = () => {
     return (
       <div>
-        <section class="hero is-medium" id="hero-header">
+        <section class="hero is-small is-warning">
             {/* <!-- Hero head: will stick at the top --> */}
             <div class="hero-head">
                 <nav class="navbar" id="navbar-bottom">
@@ -41,7 +41,7 @@ const Home = () => {
             {/* <hr /> */}
             <div class="hero-body">
                 <div class="container has-text-centered">
-                <h2 class="subtitle is-5" id="subtitle">
+                <h2 class="subtitle">
                 Making sure you stick to your shopping budget so you can smash your savings goals!
                 </h2>
                 </div>

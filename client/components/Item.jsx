@@ -1,4 +1,6 @@
 import React from 'react'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
+
 
 class Item extends React.Component {
     constructor (props) {
@@ -23,10 +25,10 @@ class Item extends React.Component {
          <div class="column">
            <div class="field has-addons">
              <div class="control">
-               <input onChange={this.handleChange} class="input is-large" type="text"  name="Add item" placeholder="Add item"/>
+               <input onChange={this.handleChange} class="input is-medium" type="text"  name="Add item" placeholder="Add item"/>
              </div>
              <div class="control">
-               <a class="button is-large" type="submit" value="add item">
+               <a class="button is-medium" type="submit" value="add item">
                  Add
                </a>
              </div>
