@@ -20,6 +20,7 @@
     "start": "node server",
     "dev": "node server & webpack --watch",
     "test": "jest --watch --noStackTrace"
+
   },
   "dependencies": {
     "body-parser": "^1.18.2",

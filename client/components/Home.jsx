@@ -11,6 +11,7 @@ const Home = () => {
                     <div class="container">
                     <div class="navbar-brand">
                         <div class="container">
+
                             <h1 class="title is-1" id="title-font">
                                 Shop-Bro
                             </h1>
@@ -47,6 +48,7 @@ const Home = () => {
                 </div>
             </div>
         </section>
+
         <Link to = {'/savings'} />
       </div>
     )
