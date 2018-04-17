@@ -23,10 +23,10 @@ class Item extends React.Component {
          <div class="column">
            <div class="field has-addons">
              <div class="control">
-               <input onChange={this.handleChange} class="input" type="text"  name="Add item" placeholder="Add item"/>
+               <input onChange={this.handleChange} class="input is-large" type="text"  name="Add item" placeholder="Add item"/>
              </div>
              <div class="control">
-               <a class="button" type="submit" value="add item">
+               <a class="button is-large" type="submit" value="add item">
                  Add
                </a>
              </div>

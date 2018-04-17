@@ -39,36 +39,36 @@ class App extends React.Component {
 
     render() {
         return <div>
-        <Router> 
-            <div>  
+        <Router>  
             <Route exact path = '/' component = {Home} />
+            <br/>
             <div class="column">
                 <div class="field has-addons">
-                    <div class="control is-centered">
-                        <input onChange={this.handleChange} class="input" type="text"  name="Spend amount" placeholder="Enter your budget"/>
-                    </div>
                     <div class="control">
-                        <a class="button" type="submit" value="=">
+                        <input onChange={this.handleChange} class="input is-large" id="spend-input" type="text"  name="Spend amount" placeholder="Enter your budget"/>
+                    </div>
+                    <div class="control is-centered">
+                        <a class="button is-large" type="submit" value="=">
                         Spend
                         </a>
                     </div>
                 </div>
             </div>
             
-
-            <div class="column">
-              <progress class="progress is-success is-small" value="5" max="100">60%</progress>
+            <br/>
+            <div class="columns">
+              <progress class="progress is-danger is-small is-flex-mobile" value="5" max="100">60%</progress>
             </div>
+            <br/>
 
             {/* Start of list part */}
-            <div class="columns is-gapless is-multiline is-mobile">
+            <div class="columns is-gapless is-multiline">
               <div class="column is-half">
                 <Item item={this.item} />
               </div>
               <div class="column is-half">
                 <Cost cost={this.cost} />
               </div>
-            </div>
             </div>
         </Router>
         </div>

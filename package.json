@@ -1,7 +1,7 @@
 {
   "name": "shop-bro",
   "version": "1.0.0",
-  "description": "",
+  "description": "Your shopping bro that will keep your budget on track",
   "main": "index.js",
   "repository": {
     "type": "git",

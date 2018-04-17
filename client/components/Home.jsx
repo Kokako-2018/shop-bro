@@ -11,7 +11,7 @@ const Home = () => {
                     <div class="container">
                     <div class="navbar-brand">
                         <div class="container">
-                            <h1 class="title is-2" id="title-font">
+                            <h1 class="title is-1" id="title-font">
                                 Shop-Bro
                             </h1>
                         </div>
@@ -41,7 +41,7 @@ const Home = () => {
             {/* <hr /> */}
             <div class="hero-body">
                 <div class="container has-text-centered">
-                <h2 class="subtitle" id="subtitle">
+                <h2 class="subtitle is-5" id="subtitle">
                 Making sure you stick to your shopping budget so you can smash your savings goals!
                 </h2>
                 </div>
@@ -51,3 +51,5 @@ const Home = () => {
       </div>
     )
 }
+
+export default Home
