@@ -39,9 +39,6 @@ class App extends React.Component {
 
     render() {
         return <div>
-        <Router>  
-            <Route exact path = '/' component = {Home} />
-            <br/>
             <div class="column">
                 <div class="field has-addons">
                     <div class="control">
