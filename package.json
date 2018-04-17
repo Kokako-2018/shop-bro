@@ -22,10 +22,11 @@
     "post install": "webpack"
   },
   "dependencies": {
+    "bulma": "^0.7.0",
     "express": "^4.16.2",
-    "webpack": "^3.10.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
