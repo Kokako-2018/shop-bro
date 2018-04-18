@@ -17,7 +17,6 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-
     "start": "node server & webpack --watch",
     "test": "jest --watch --noStackTrace"
 
