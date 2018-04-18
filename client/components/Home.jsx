@@ -4,15 +4,15 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom'
 const Home = () => {
     return (
       <div>
-        <section class="hero is-small is-warning">
+        <section class="hero is-small is-primary" >
             {/* <!-- Hero head: will stick at the top --> */}
-            <div class="hero-head">
-                <nav class="navbar" id="navbar-bottom">
+            <div class="hero-head" id="navbar-background">
+                <nav class="navbar">
                     <div class="container">
                     <div class="navbar-brand">
                         <div class="container">
 
-                            <h1 class="title is-1" id="title-font">
+                            <h1 class="title is-2" id="title-font">
                                 Shop-Bro
                             </h1>
                         </div>

@@ -20,7 +20,6 @@
     "start": "node server",
     "dev": "node server & webpack --watch",
     "test": "jest --watch --noStackTrace"
-
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -30,6 +29,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
+    "sass": "^1.2.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   },

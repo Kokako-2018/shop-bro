@@ -51,7 +51,7 @@ class App extends React.Component {
                         </div>
                         <div class="control is-centered">
                             <a class="button is-large is-success is-outlined" type="submit" value="=">
-                            Spend
+                            Budget
                             </a>
                         </div>
                     </div>
