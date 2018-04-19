@@ -1,23 +1,27 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
+import {appendItem} from '../api'
 
-class Item extends React.Component {
+
+export default class AddItem extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
             item: ''
         }
+        this.handleChange = this.handleChange.bind(this)
+        this.addItem = this.addItem.bind(this)
     }
 
     handleChange(e) {
-        var key = e.target.name
-        this.setState(key)
+        this.setState({
+          [e.target.name]: e.target.value
+        })
     }
 
-    handleSubmit(e) {
-        e.preventDefault()
-        this.props.makeItemForm(this.state)
+    addItem (e) {
+      appendItem(this.state, this.props.finishAdd)
     }
 
     render() {
@@ -25,12 +29,13 @@ class Item extends React.Component {
          <div class="column">
            <div class="field has-addons">
              <div class="control">
-               <input onChange={this.handleChange} class="input is-medium" type="text"  name="Add item" placeholder="Add item"/>
+               <input onChange={this.handleChange} class="input is-medium" type="text"  />
              </div>
              <div class="control">
-               <a class="button is-medium" type="submit" value="add item">
+               <a class="button is-medium" onClick={this.addItem} type="submit" value="add item">
                  Add
                </a>
+               <a href='#' onClick={this.props.finishAdd}>Cancel</a>
              </div>
            </div>
          </div>
@@ -39,5 +44,3 @@ class Item extends React.Component {
       </div>
     }
 }
-
-export default Item

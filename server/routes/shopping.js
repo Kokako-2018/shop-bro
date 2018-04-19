@@ -1,0 +1,20 @@
+const express = require('express')
+const router = express.Router()
+
+const db = require('../dbOne')
+
+router.get('/', function (req, res) {
+  res.json(db.getItems())
+})
+
+router.post('/', function (req, res) {
+  console.log("post")
+  db.saveItem(req.body)
+  // Normally saveItem would be async and you'd
+  // have to sendStatus in the .then, but in this
+  // implementation, the data is stored in server
+  // memory and is done synchronously.
+  res.sendStatus(200)
+})
+
+module.exports = router
