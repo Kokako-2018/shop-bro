@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+// import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 import {appendItem} from '../api'
 
@@ -28,9 +28,10 @@ export default class AddItem extends React.Component {
       return <div>
          <div class="column">
            <div class="field has-addons">
-             <div class="control">
+             
+
                <input onChange={this.handleChange} class="input is-medium" type="text"  />
-             </div>
+             
              <div class="control">
                <a class="button is-medium" onClick={this.addItem} type="submit" value="add item">
                  Add

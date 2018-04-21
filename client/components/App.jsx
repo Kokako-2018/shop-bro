@@ -4,6 +4,7 @@ import Home from "./Home"
 import AddItem from './AddItem'
 import Cost from './Cost'
 import ErrorMessage from './ErrorMessage'
+import ItemDetails from './ItemDetails'
 
 import {getItems} from '../api'
 
@@ -13,14 +14,7 @@ export default class App extends React.Component {
         super(props)
         this.state = {
             error: null, 
-            items: [
-                {
-                    id: 1, item: ''
-                },
-                {
-                    id: 2, cost: 0
-                }
-            ],
+            items: [],
             activeItem: null,
             detailsVisible: false,
             addItemVisible: false
@@ -115,10 +109,15 @@ export default class App extends React.Component {
                     </div>
                 <br/>
 
+                <ItemDetails
+                isVisible={this.state.detailsVisible}
+                hideDetails={this.hideDetails}
+                item={this.state.activeItem} />}
+
                 {/* Start of list part */}
                 <div class="columns is-gapless is-multiline">
                     <div class="column is-half">
-                        <AddItem item={this.item} finishAdd={this.refreshList}/>
+                        <AddItem item={this.item} finishAdd={this.refreshList}/>}
                     </div>
                     <div class="column is-half">
                         <Cost cost={this.cost} />
