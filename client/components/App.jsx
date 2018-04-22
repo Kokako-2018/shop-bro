@@ -6,6 +6,8 @@ import Cost from './Cost'
 import ErrorMessage from './ErrorMessage'
 import ItemDetails from './ItemDetails'
 import CompletedButton from './CompletedButton'
+import ItemList from './ItemList'
+import ListItem from './ListItem'
 
 import {getItems} from '../api'
 
@@ -32,7 +34,8 @@ export default class App extends React.Component {
     }
 
     componentDidMount () {
-        this.refreshList()
+        getItems(this.refreshList)
+        // this.refreshList()
       }
     
     renderItems (err, items) {
@@ -42,10 +45,9 @@ export default class App extends React.Component {
     })
     }
 
-    refreshList (err) {
+    refreshList (err, array) {
     this.setState({
-        error: err,
-        addItemVisible: false
+        items: array
     })
 
     getItems(this.renderItems)
@@ -90,6 +92,7 @@ export default class App extends React.Component {
     // }
 
     render() {
+        
         return <div>
         <ErrorMessage error={this.state.error} />
         <Router> 
@@ -116,28 +119,30 @@ export default class App extends React.Component {
                     </div>
                 <br/>
 
-                <ItemDetails
-                isVisible={this.state.detailsVisible}
-                hideDetails={this.hideDetails}
-                item={this.state.activeItem} />}
-
+                <ItemList
+                showDetails={this.showDetails}
+                items={this.state.items} />
+                
+                
                 {/* Start of list part */}
                 <div class="columns is-gapless is-multiline">
+
                     <div class="column is-half">
                         <AddItem item={this.item} finishAdd={this.refreshList}/>}
                     </div>
+
                     <div class="column is-half">
                         <Cost cost={this.cost} />
                     </div>
+
                 </div>
 
-                  <div class="column">
-                    <div class="control is-centered">
-                        <CompletedButton playing={this.state.playing} startPlaying={this.startPlaying} />
-                    </div>
+                <div class="column">
+                  <div class="control is-centered">
+                    <CompletedButton playing={this.state.playing} startPlaying={this.startPlaying} />
                   </div>
-                
-
+                </div>
+            
             </div>
         </Router>
         </div>

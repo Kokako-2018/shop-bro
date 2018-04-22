@@ -12,7 +12,7 @@ const Home = () => {
                     <div class="navbar-brand">
                         <div class="container">
 
-                            <h1 class="title is-2" id="title-font">
+                            <h1 className="title is-2" id="title-font">
                                 Shop-Bro
                             </h1>
                         </div>
@@ -48,8 +48,6 @@ const Home = () => {
                 </div>
             </div>
         </section>
-
-        <Link to = {'/savings'} />
       </div>
     )
 }
