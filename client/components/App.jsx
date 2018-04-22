@@ -5,6 +5,7 @@ import AddItem from './AddItem'
 import Cost from './Cost'
 import ErrorMessage from './ErrorMessage'
 import ItemDetails from './ItemDetails'
+import CompletedButton from './CompletedButton'
 
 import {getItems} from '../api'
 
@@ -17,7 +18,8 @@ export default class App extends React.Component {
             items: [],
             activeItem: null,
             detailsVisible: false,
-            addItemVisible: false
+            addItemVisible: false,
+            playing: false
         }
         this.refreshList = this.refreshList.bind(this)
         this.showDetails = this.showDetails.bind(this)
@@ -26,6 +28,7 @@ export default class App extends React.Component {
         this.makeItemForm = this.makeItemForm.bind(this)
         // this.showAddWidget = this.showAddWidget.bind(this)
         // this.makeCostForm = this.makeCostForm.bind(this)
+        this.startPlaying = this.startPlaying.bind(this)
     }
 
     componentDidMount () {
@@ -75,6 +78,10 @@ export default class App extends React.Component {
         this.setState({items})
     }
 
+    startPlaying() {
+        this.setState({playing: !this.state.playing})
+    }    
+
     // makeCostForm(cost) {
     //     cost.id = cost.length + 1
     //     cost.push(cost)
@@ -123,6 +130,14 @@ export default class App extends React.Component {
                         <Cost cost={this.cost} />
                     </div>
                 </div>
+
+                  <div class="column">
+                    <div class="control is-centered">
+                        <CompletedButton playing={this.state.playing} startPlaying={this.startPlaying} />
+                    </div>
+                  </div>
+                
+
             </div>
         </Router>
         </div>
