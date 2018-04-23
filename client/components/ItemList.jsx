@@ -7,7 +7,7 @@ export default function ItemList (props) {
       <div className='item-list'>
         <h2 class="title is-3">Shopping List</h2>
         {props.items.map(item => {
-          return <ListItem item={item} />
+          return <ListItem item={item} refresh={props.refresh} />
         })}
       </div>
     )

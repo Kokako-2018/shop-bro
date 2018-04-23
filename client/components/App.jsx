@@ -118,8 +118,8 @@ export default class App extends React.Component {
                     </div>
                 <br/>
 
-                <ItemList
-                refresh={this.state.refreshList}
+                <ItemList 
+                refresh={this.refreshList}
                 showDetails={this.showDetails}
                 items={this.state.items} />
                 
