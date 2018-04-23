@@ -11,6 +11,7 @@ export function getItems (callback) {
 }
 
 export function appendItem (item, callback) {
+  console.log('send', item)
   request
     .post(shopBroUrl)
     .send(item)

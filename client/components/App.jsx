@@ -34,23 +34,20 @@ export default class App extends React.Component {
     }
 
     componentDidMount () {
-        getItems(this.refreshList)
-        // this.refreshList()
+        // getItems(this.refreshList)
+        this.refreshList()
       }
     
     renderItems (err, items) {
+        console.log('r', items)
     this.setState({
         error: err,
-        items: [items] || []
+        items: items || []
     })
     }
 
-    refreshList (err, array) {
-    this.setState({
-        items: array
-    })
-
-    getItems(this.renderItems)
+    refreshList () {
+        getItems(this.renderItems)
     }
 
     showAddItem () {
@@ -76,7 +73,6 @@ export default class App extends React.Component {
         const items = this.state.items
         item.id = items.length + 1
         items.push(item)
-        console.log(item)
         this.setState({items})
     }
 
@@ -128,7 +124,7 @@ export default class App extends React.Component {
                 <div class="columns is-gapless is-multiline">
 
                     <div class="column is-half">
-                        <AddItem item={this.item} finishAdd={this.refreshList}/>}
+                        <AddItem item={this.item} finishAdd={this.refreshList}/>
                     </div>
 
                     <div class="column is-half">

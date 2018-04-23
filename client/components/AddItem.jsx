@@ -8,20 +8,29 @@ export default class AddItem extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            item: ''
+            item: {
+              item: '',
+              cost: null
+            }
         }
         this.handleChange = this.handleChange.bind(this)
         this.addItem = this.addItem.bind(this)
     }
 
     handleChange(e) {
-        this.setState({
-          [e.target.name]: e.target.value
-        })
+        let newItem = {}
+        newItem[e.target.name] = e.target.value
+        this.setState({item: newItem})
     }
 
     addItem (e) {
-      appendItem(this.state, this.props.finishAdd)
+      appendItem(this.state.item, this.props.finishAdd)
+      this.setState({
+        item: {
+          item: '',
+          cost: null
+        }
+      })
     }
 
     render() {
@@ -30,7 +39,7 @@ export default class AddItem extends React.Component {
            <div class="field has-addons">
              
 
-               <input onChange={this.handleChange} class="input is-medium" type="text"  />
+               <input onChange={this.handleChange} class="input is-medium" type="text" name="item" value={this.state.item.item}/>
              
              <div class="control">
                <a class="button is-medium" onClick={this.addItem} type="submit" value="add item">

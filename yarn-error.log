@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install react-sound --save
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run webpack --watch
 
 PATH: 
   C:\Users\engie\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\engie\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Users\engie\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\engie\.babun;C:\Users\engie\AppData\Roaming\npm;C:\Users\engie\AppData\Local\Yarn\bin;C:\Program Files (x86)\Heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -47,6 +47,7 @@ npm manifest:
       "react-addons-test-utils": "^15.6.2",
       "react-dom": "^16.2.0",
       "react-router-dom": "^4.2.2",
+      "react-sound": "^1.1.0",
       "sass": "^1.2.0",
       "superagent": "^3.8.2",
       "webpack": "^3.10.0",
@@ -4373,7 +4374,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.5.4, prop-types@^15.6.0:
+  prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.6.0:
     version "15.6.1"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
     dependencies:
@@ -4549,6 +4550,13 @@ Lockfile:
       path-to-regexp "^1.7.0"
       prop-types "^15.5.4"
       warning "^3.0.0"
+  
+  react-sound@^1.1.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/react-sound/-/react-sound-1.1.0.tgz#d3647c2cbe8adabc3c6661a804d810f23e81917a"
+    dependencies:
+      prop-types "^15.5.7"
+      soundmanager2 "^2.97.20170602"
   
   react-test-renderer@^16.0.0-0:
     version "16.3.2"
@@ -5041,6 +5049,10 @@ Lockfile:
     dependencies:
       faye-websocket "^0.10.0"
       uuid "^3.0.1"
+  
+  soundmanager2@^2.97.20170602:
+    version "2.97.20170602"
+    resolved "https://registry.yarnpkg.com/soundmanager2/-/soundmanager2-2.97.20170602.tgz#fe3bc731bfc4d54c1364e71980263e6816981879"
   
   source-list-map@^2.0.0:
     version "2.0.0"
@@ -5897,10 +5909,17 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: `install` has been replaced with `add` to add new dependencies. Run "yarn add react-sound" instead.
-      at new MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
-      at Object.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:21987:13)
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 3221225786
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c C:\Users\engie\EngieMatene\shop-bro\node_modules\.bin\webpack --watch
+  Directory: C:\Users\engie\EngieMatene\shop-bro
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Program Files (x86)\Yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

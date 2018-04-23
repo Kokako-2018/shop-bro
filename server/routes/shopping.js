@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
 })
 
 router.post('/', function (req, res) {
-  console.log("post")
+  console.log("post", req.body)
   db.saveItem(req.body)
   // Normally saveItem would be async and you'd
   // have to sendStatus in the .then, but in this

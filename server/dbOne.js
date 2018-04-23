@@ -26,6 +26,6 @@ function getItems() {
 }
 
 function saveItem (item) {
-    item.id = item.length + 1
+    item.id = items.length + 1
     items.push(item)
   }
