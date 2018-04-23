@@ -1,5 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
+
 import Home from "./Home"
 import AddItem from './AddItem'
 import Cost from './Cost'
@@ -8,6 +9,7 @@ import ItemDetails from './ItemDetails'
 import CompletedButton from './CompletedButton'
 import ItemList from './ItemList'
 import ListItem from './ListItem'
+
 
 import {getItems} from '../api'
 
@@ -18,9 +20,11 @@ export default class App extends React.Component {
         this.state = {
             error: null, 
             items: [],
+            // cost: null,
             activeItem: null,
             detailsVisible: false,
             addItemVisible: false,
+            showEdit: false,
             playing: false
         }
         this.refreshList = this.refreshList.bind(this)
@@ -28,22 +32,20 @@ export default class App extends React.Component {
         this.hideDetails = this.hideDetails.bind(this)
         this.renderItems = this.renderItems.bind(this)
         this.makeItemForm = this.makeItemForm.bind(this)
-        // this.showAddWidget = this.showAddWidget.bind(this)
+        // this.showAddItem = this.showAddWidget.bind(this)
         // this.makeCostForm = this.makeCostForm.bind(this)
         this.startPlaying = this.startPlaying.bind(this)
     }
 
     componentDidMount () {
-        // getItems(this.refreshList)
         this.refreshList()
       }
     
     renderItems (err, items) {
-        console.log('r', items)
     this.setState({
         error: err,
         items: items || []
-    })
+      })
     }
 
     refreshList () {
@@ -80,12 +82,13 @@ export default class App extends React.Component {
         this.setState({playing: !this.state.playing})
     }    
 
-    // makeCostForm(cost) {
-    //     cost.id = cost.length + 1
-    //     cost.push(cost)
-    //     console.log(cost)
-    //     this.setState({cost})
+    // makeCostForm(item) {
+    //     item.id = item.cost.length + 1
+    //     items.push(item)
+    //     console.log(item)
+    //     this.setState({items})
     // }
+
 
     render() {
         
@@ -110,7 +113,7 @@ export default class App extends React.Component {
                 </div>
                 
                 <br/>
-                    <div class="columns">
+                    <div class="column">
                     <progress class="progress is-danger is-small" value="5" max="100">60%</progress>
                     </div>
                 <br/>
@@ -119,7 +122,7 @@ export default class App extends React.Component {
                 showDetails={this.showDetails}
                 items={this.state.items} />
                 
-                
+               
                 {/* Start of list part */}
                 <div class="columns is-gapless is-multiline">
 

@@ -45,7 +45,6 @@ export default class AddItem extends React.Component {
                <a class="button is-medium" onClick={this.addItem} type="submit" value="add item">
                  Add
                </a>
-               <a href='#' onClick={this.props.finishAdd}>Cancel</a>
              </div>
            </div>
          </div>
