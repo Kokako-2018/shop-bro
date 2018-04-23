@@ -19,14 +19,11 @@ export function appendItem (item, callback) {
       callback(err)
     })
 }
-
-// export function getBg (callback) {
-//   console.log('Calling API getBg')
-//   request
-//     .get(bgUrl)
-//     .end((err, res) => {
-//       callback(err, res.body)
-//     })
-// }
-//From Zengie branch of react to web api exercise.  This is here another
-//API is used and called.
+export function deleteItem (id, callback) {
+  request
+   .del(shopBroUrl)
+   .send({id:id})
+   .end((err, res) => {
+     callback(err)
+   })
+}

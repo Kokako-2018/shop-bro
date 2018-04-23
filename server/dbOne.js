@@ -1,6 +1,7 @@
 module.exports = {
     getItems,
-    saveItem
+    saveItem,
+    removeItem
 }
 
 
@@ -29,3 +30,8 @@ function saveItem (item) {
     item.id = items.length + 1
     items.push(item)
   }
+
+function removeItem (item) {
+    var newArr = items.filter(each => { return item.id != each.id})
+    return items = newArr
+}
