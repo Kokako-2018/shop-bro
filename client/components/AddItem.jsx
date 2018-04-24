@@ -35,14 +35,14 @@ export default class AddItem extends React.Component {
 
     render() {
       return <div>
-         <div class="column">
-           <div class="field has-addons">
+         <div className="column">
+           <div className="field has-addons">
              
 
-               <input onChange={this.handleChange} class="input is-medium" type="text" name="item" value={this.state.item.item}/>
+               <input onChange={this.handleChange} className="input is-medium" type="text" name="item" value={this.state.item.item}/>
              
-             <div class="control">
-               <a class="button is-medium" onClick={this.addItem} type="submit" value="add item">
+             <div className="control">
+               <a className="button is-medium" onClick={this.addItem} type="submit" value="add item">
                  Add
                </a>
              </div>

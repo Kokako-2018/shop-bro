@@ -7,8 +7,8 @@ export default class CompletedButton extends React.Component {
         return <div>
           <div className="button">
           <a class="button is-success is-large is-mobile" className="playbutton" onClick={this.props.startPlaying}>
-                <span class="icon is-large">
-                    <i class="fas fa-check"></i>
+                <span className="icon is-large">
+                    <i className="fas fa-check"></i>
                 </span>
                 <span>Shop Complete!</span>
                 {this.props.playing && <Sound url="sounds/button-sound.mp3" playStatus={Sound.status.PLAYING} playFromposition={0.1} /> }

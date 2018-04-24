@@ -21,4 +21,10 @@ router.delete('/', function (req, res) {
   res.sendStatus(200)
 })
 
+router.put('/', (req, res) => { 
+  db.updateItem(req.body) // is complaining it didn't know what this function was... (go to db)
+  res.sendStatus(204)
+})
+
+
 module.exports = router

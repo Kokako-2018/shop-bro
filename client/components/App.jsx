@@ -9,10 +9,11 @@ import ItemDetails from './ItemDetails'
 import CompletedButton from './CompletedButton'
 import ItemList from './ItemList'
 import ListItem from './ListItem'
+import UpdateItem from './UpdateItem'
 
 
 import {getItems} from '../api'
-
+import * as api from '../api'
 
 export default class App extends React.Component {
     constructor(props) {
@@ -25,7 +26,8 @@ export default class App extends React.Component {
             detailsVisible: false,
             addItemVisible: false,
             showEdit: false,
-            playing: false
+            playing: false,
+            updateWidgetVisible: false
         }
         this.refreshList = this.refreshList.bind(this)
         this.showDetails = this.showDetails.bind(this)
@@ -35,6 +37,7 @@ export default class App extends React.Component {
         // this.showAddItem = this.showAddWidget.bind(this)
         // this.makeCostForm = this.makeCostForm.bind(this)
         this.startPlaying = this.startPlaying.bind(this)
+        this.showUpdateItem = this.showUpdateItem.bind(this)
     }
 
     componentDidMount () {
@@ -82,6 +85,12 @@ export default class App extends React.Component {
         this.setState({playing: !this.state.playing})
     }    
 
+    showUpdateItem() {
+        this.setState({
+            updateWidgetVisible: true
+        })
+    }
+    
     // makeCostForm(item) {
     //     item.id = item.cost.length + 1
     //     items.push(item)
@@ -99,13 +108,13 @@ export default class App extends React.Component {
                 <Route exact path='/' component={Home} />
                 <br/>
                 
-                <div class="column">
-                    <div class="field has-addons">
-                        <div class="control">
-                            <input onChange={this.handleChange} class="input is-large" type="text"  name="Spend amount" placeholder="Enter your budget"/>
+                <div className="column">
+                    <div className="field has-addons">
+                        <div className="control">
+                            <input onChange={this.handleChange} className="input is-large" type="text"  name="Spend amount" placeholder="Enter your budget"/>
                         </div>
-                        <div class="control is-centered">
-                            <a class="button is-large is-success is-outlined" type="submit" value="=">
+                        <div className="control is-centered">
+                            <a className="button is-large is-success is-outlined" type="submit" value="=">
                             Budget
                             </a>
                         </div>
@@ -113,8 +122,8 @@ export default class App extends React.Component {
                 </div>
                 
                 <br/>
-                    <div class="column">
-                    <progress class="progress is-danger is-small" value="5" max="100">60%</progress>
+                    <div className="column">
+                    <progress className="progress is-danger is-small" value="5" max="100">60%</progress>
                     </div>
                 <br/>
 
@@ -123,22 +132,23 @@ export default class App extends React.Component {
                 showDetails={this.showDetails}
                 items={this.state.items} />
                 
+                
                
                 {/* Start of list part */}
-                <div class="columns is-gapless is-multiline">
+                <div className="columns is-gapless is-multiline">
 
-                    <div class="column is-half">
+                    <div className="column is-half">
                         <AddItem item={this.item} finishAdd={this.refreshList}/>
                     </div>
 
-                    <div class="column is-half">
+                    <div className="column is-half">
                         <Cost cost={this.cost} />
                     </div>
 
                 </div>
 
-                <div class="column">
-                  <div class="control is-centered">
+                <div className="column">
+                  <div className="control is-centered">
                     <CompletedButton playing={this.state.playing} startPlaying={this.startPlaying} />
                   </div>
                 </div>

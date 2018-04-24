@@ -6,7 +6,7 @@ export default class UpdateItem extends React.Component {
     constructor (props) {
         super (props)
         this.state = {
-            item: props.item
+            item: props
         }
         this.handleChange = this.handleChange.bind(this)
         this.updateItem = this.updateItem.bind(this)
@@ -15,7 +15,6 @@ export default class UpdateItem extends React.Component {
     componentWillReceiveProps(nextProps) {
         console.log(this.props, {nextProps})
         this.setState({item: nextProps.item})
-        // this.props = nextProps
     }
 
     handleChange (e) {
@@ -30,11 +29,13 @@ export default class UpdateItem extends React.Component {
 
     render () {
         const {item} = this.state
+        console.log(item, 'hello')
         return (
             <div className='update-widget'>
                 <form>
                     <p>
-                        <input name="name" value={item.item} />
+                        <input name="item" value={item.item} />
+                        <input name="cost" value={item.cost} />
                     </p>
                 
                 </form>

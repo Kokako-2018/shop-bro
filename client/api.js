@@ -11,7 +11,6 @@ export function getItems (callback) {
 }
 
 export function appendItem (item, callback) {
-  console.log('send', item)
   request
     .post(shopBroUrl)
     .send(item)
@@ -19,6 +18,7 @@ export function appendItem (item, callback) {
       callback(err)
     })
 }
+
 export function deleteItem (id, callback) {
   request
    .del(shopBroUrl)
@@ -26,4 +26,13 @@ export function deleteItem (id, callback) {
    .end((err, res) => {
      callback(err)
    })
+}
+
+export function updateItem (id, callback) {
+  request
+    .put(shopBroUrl)
+    .send({id: id})
+    .end((err) => {
+      callback(err)
+    })
 }

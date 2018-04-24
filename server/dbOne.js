@@ -1,7 +1,9 @@
 module.exports = {
     getItems,
     saveItem,
-    removeItem
+    removeItem,
+    updateItem
+    //because you're not exporting update item
 }
 
 
@@ -35,3 +37,9 @@ function removeItem (item) {
     var newArr = items.filter(each => { return item.id != each.id})
     return items = newArr
 }
+
+function updateItem (newItem) {
+  items.map((item) => {
+    return item.id == newItem.id ? newItem : item
+  })
+ }

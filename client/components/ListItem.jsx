@@ -1,15 +1,9 @@
 import React from 'react'
-import {deleteItem} from '../api'
+import {deleteItem, updateItem} from '../api'
 import App from './App'
+import UpdateItem from './UpdateItem'
 
 export default function ListItem ({item, refresh}) {
-    
-    console.log(item, refresh, 'here')
-
-    // function delItem () {
-    //     console.log(this.refresh)
-    //     deleteItem(item.id, this.refresh)
-    // }
 
     return (
         <div className='list-item'>
@@ -19,8 +13,11 @@ export default function ListItem ({item, refresh}) {
           <ul>
             <li class="has-text-weight-semibold">Item: {`${item.item}`}</li>
             <li>Cost: {`${item.cost}`}</li>
+            
           </ul>
+          
           <button onClick={() =>deleteItem(item.id, refresh)} >Delete</button>
+          {/* <button onClick={() =>updateItem(item.id, refresh)} >Update</button> */}
          </div>
          </div>
         </div>

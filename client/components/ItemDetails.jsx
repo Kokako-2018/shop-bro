@@ -8,9 +8,7 @@ export default function ItemDetails (props) {
   return (
     <div className={classes}>
     
-      <p>Item: {props.item}</p>
-      <p>Cost: {props.cost}</p>
-      <a href='#' onClick={hideDetails}>Close</a>
+      
     </div>
   )
 }
