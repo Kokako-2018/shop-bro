@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run webpack --watch
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js test
 
 PATH: 
   C:\Users\engie\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\engie\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Users\engie\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\engie\.babun;C:\Users\engie\AppData\Roaming\npm;C:\Users\engie\AppData\Local\Yarn\bin;C:\Program Files (x86)\Heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -35,11 +35,13 @@ npm manifest:
     "scripts": {
       "start": "node server",
       "dev": "node server & webpack --watch",
-      "test": "jest --watch --noStackTrace"
+      "test": "jest --watch --noStackTrace",
+      "postinstall": "webpack"
     },
     "dependencies": {
       "body-parser": "^1.18.2",
       "bulma": "0.7.0",
+      "cheerio": "^1.0.0-rc.2",
       "cors": "^2.8.4",
       "express": "^4.16.2",
       "jsdom": "^11.8.0",
@@ -50,6 +52,7 @@ npm manifest:
       "react-sound": "^1.1.0",
       "sass": "^1.2.0",
       "superagent": "^3.8.2",
+      "supertest": "^3.0.0",
       "webpack": "^3.10.0",
       "webpack-dev-server": "^2.11.1"
     },
@@ -5275,7 +5278,7 @@ Lockfile:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   
-  superagent@^3.8.2:
+  superagent@^3.0.0, superagent@^3.8.2:
     version "3.8.2"
     resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.8.2.tgz#e4a11b9d047f7d3efeb3bbe536d9ec0021d16403"
     dependencies:
@@ -5289,6 +5292,13 @@ Lockfile:
       mime "^1.4.1"
       qs "^6.5.1"
       readable-stream "^2.0.5"
+  
+  supertest@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/supertest/-/supertest-3.0.0.tgz#8d4bb68fd1830ee07033b1c5a5a9a4021c965296"
+    dependencies:
+      methods "~1.1.2"
+      superagent "^3.0.0"
   
   supports-color@^2.0.0:
     version "2.0.0"
@@ -5910,9 +5920,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3221225786
+  Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c C:\Users\engie\EngieMatene\shop-bro\node_modules\.bin\webpack --watch
+  Arguments: /d /s /c jest --watch --noStackTrace
   Directory: C:\Users\engie\EngieMatene\shop-bro
   Output:
   

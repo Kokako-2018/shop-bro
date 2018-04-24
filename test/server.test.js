@@ -19,3 +19,16 @@ test('Check the title is correct', (done) => {
         done()
     })
 })
+
+test('/ returns the first item on the getItems array', () => {
+
+    const expected = 'test'
+
+    request(server)
+        .get('/')
+        .end((err, res) => {
+            expect(err).tobeFalsy()
+            expect(res.text).toBe(expected)
+        })
+
+})
