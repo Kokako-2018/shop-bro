@@ -4,7 +4,7 @@ import Sound from 'react-sound'
 export default class CompletedButton extends React.Component {
 
     render() {
-        return <div className="column is-centered">
+        return <div>
           <div className="button is-large is-primary is-rounded is-centered">
           <a className="playbutton" onClick={this.props.startPlaying}>
                 <span className="icon is-large">

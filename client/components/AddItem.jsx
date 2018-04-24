@@ -35,6 +35,7 @@ export default class AddItem extends React.Component {
 
     render() {
       return <div>
+        <br/>
          <div className="column">
            <div className="field has-addons">
              
