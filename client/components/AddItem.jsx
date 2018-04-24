@@ -42,7 +42,7 @@ export default class AddItem extends React.Component {
                <input onChange={this.handleChange} className="input is-medium" type="text" name="item" value={this.state.item.item}/>
              
              <div className="control">
-               <a className="button is-medium" onClick={this.addItem} type="submit" value="add item">
+               <a className="button is-medium is-primary is-outlined" onClick={this.addItem} type="submit" value="add item">
                  Add
                </a>
              </div>

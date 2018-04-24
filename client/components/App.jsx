@@ -141,9 +141,9 @@ export default class App extends React.Component {
                         <AddItem item={this.item} finishAdd={this.refreshList}/>
                     </div>
 
-                    <div className="column is-half">
+                    {/* <div className="column is-half">
                         <Cost cost={this.cost} />
-                    </div>
+                    </div> */}
 
                 </div>
 
