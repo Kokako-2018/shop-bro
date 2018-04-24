@@ -25,8 +25,7 @@ export default class App extends React.Component {
             activeItem: null,
             detailsVisible: false,
             addItemVisible: false,
-            editItem: null,
-            editItemVisible: false,
+            updateWidgetVisible: false,
             playing: false
         }
         this.refreshList = this.refreshList.bind(this)
@@ -59,6 +58,12 @@ export default class App extends React.Component {
     this.setState({
         addItemVisible: true
     })
+    }
+
+    showUpdateItem () {
+        this.setState ({
+            updateWidgetVisible: true
+        })
     }
 
     showDetails (item) {
@@ -138,6 +143,11 @@ export default class App extends React.Component {
                 items={this.state.items} 
                 showEditForm={this.showEditForm.bind(this)}/>
                 
+                {/* {this.state.detailsVisible && <span> */}
+                <ItemDetails isVisible={this.state.detailsVisible} 
+                hideDetails={this.hideDetails}
+                item={this.state.activeItem} />
+                {/* </span>} */}
                 
                
                 {/* Start of list part */}

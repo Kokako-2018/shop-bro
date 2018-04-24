@@ -1,5 +1,5 @@
 import React from 'react'
-
+import App from './App'
 
 export default class ItemDetails extends React.Component {
   constructor(props) {
@@ -24,6 +24,7 @@ export default class ItemDetails extends React.Component {
   render() {
     const {isVisible, hideDetails} = this.props
     const {showForm, widget} = this.state
+    console.log( 'working')
 
     return <div>
       {showForm
