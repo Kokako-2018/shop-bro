@@ -17,17 +17,25 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "node server & webpack --watch",
+    "start": "node server",
+    "dev": "node server & webpack --watch",
     "test": "jest --watch --noStackTrace"
-
   },
   "dependencies": {
-    "bulma": "^0.7.0",
-    "express": "^4.16.2",
     "body-parser": "^1.18.2",
+    "bulma": "0.7.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsdom": "^11.8.0",
     "react": "^16.2.0",
+    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
-    "webpack": "^3.10.0"
+    "react-router-dom": "^4.2.2",
+    "react-sound": "^1.1.0",
+    "sass": "^1.2.0",
+    "superagent": "^3.8.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -37,12 +45,6 @@
     "babel-register": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.1.4",
-    "react": "^16.2.0",
-    "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1"
+    "jest": "^22.1.4"
   }
 }

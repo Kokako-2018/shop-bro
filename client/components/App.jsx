@@ -1,76 +1,160 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
+
 import Home from "./Home"
-import Item from './Item'
+import AddItem from './AddItem'
 import Cost from './Cost'
+import ErrorMessage from './ErrorMessage'
+import ItemDetails from './ItemDetails'
+import CompletedButton from './CompletedButton'
+import ItemList from './ItemList'
+import ListItem from './ListItem'
+import UpdateItem from './UpdateItem'
 
 
-class App extends React.Component {
+import {getItems} from '../api'
+import * as api from '../api'
+
+export default class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            items: [
-                {
-                    id: 1, item: ''
-                },
-                {
-                    id: 2, cost: 0
-                }
-            ]
+            error: null, 
+            items: [],
+            // cost: null,
+            activeItem: null,
+            detailsVisible: false,
+            addItemVisible: false,
+            showEdit: false,
+            playing: false,
+            updateWidgetVisible: false
         }
+        this.refreshList = this.refreshList.bind(this)
+        this.showDetails = this.showDetails.bind(this)
+        this.hideDetails = this.hideDetails.bind(this)
+        this.renderItems = this.renderItems.bind(this)
         this.makeItemForm = this.makeItemForm.bind(this)
+        // this.showAddItem = this.showAddWidget.bind(this)
         // this.makeCostForm = this.makeCostForm.bind(this)
+        this.startPlaying = this.startPlaying.bind(this)
+        this.showUpdateItem = this.showUpdateItem.bind(this)
+    }
+
+    componentDidMount () {
+        this.refreshList()
+      }
+    
+    renderItems (err, items) {
+    this.setState({
+        error: err,
+        items: items || []
+      })
+    }
+
+    refreshList () {
+        getItems(this.renderItems)
+    }
+
+    showAddItem () {
+    this.setState({
+        addItemVisible: true
+    })
+    }
+
+    showDetails (item) {
+    this.setState({
+        activeItem: item,
+        detailsVisible: true
+    })
+    }
+
+    hideDetails () {
+    this.setState({
+        detailsVisible: false
+    })
     }
 
     makeItemForm(item) {
-        const items = thiis.state.items
+        const items = this.state.items
         item.id = items.length + 1
         items.push(item)
-        console.log(item)
         this.setState({items})
     }
 
-    // makeCostForm(cost) {
-    //     cost.id = cost.length + 1
-    //     cost.push(cost)
-    //     console.log(cost)
-    //     this.setState({cost})
+    startPlaying() {
+        this.setState({playing: !this.state.playing})
+    }    
+
+    showUpdateItem() {
+        this.setState({
+            updateWidgetVisible: true
+        })
+    }
+    
+    // makeCostForm(item) {
+    //     item.id = item.cost.length + 1
+    //     items.push(item)
+    //     console.log(item)
+    //     this.setState({items})
     // }
 
+
     render() {
+        
         return <div>
-            <div class="column">
-                <div class="field has-addons">
-                    <div class="control">
-                        <input onChange={this.handleChange} class="input is-large" id="spend-input" type="text"  name="Spend amount" placeholder="Enter your budget"/>
-                    </div>
-                    <div class="control is-centered">
-                        <a class="button is-large" type="submit" value="=">
-                        Spend
-                        </a>
+        <ErrorMessage error={this.state.error} />
+        <Router> 
+            <div>
+                <Route exact path='/' component={Home} />
+                <br/>
+                
+                <div className="column">
+                    <div className="field has-addons">
+                        <div className="control">
+                            <input onChange={this.handleChange} className="input is-large" type="text"  name="Spend amount" placeholder="Enter your budget"/>
+                        </div>
+                        <div className="control is-centered">
+                            <a className="button is-large is-success is-outlined" type="submit" value="=">
+                            Budget
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <br/>
-            <div class="columns">
-              <progress class="progress is-danger is-small is-flex-mobile" value="5" max="100">60%</progress>
-            </div>
-            <br/>
+                
+                <br/>
+                    <div className="column">
+                    <progress className="progress is-danger is-small" value="5" max="100">60%</progress>
+                    </div>
+                <br/>
 
-            {/* Start of list part */}
-            <div class="columns is-gapless is-multiline">
-              <div class="column is-half">
-                <Item item={this.item} />
-              </div>
-              <div class="column is-half">
-                <Cost cost={this.cost} />
-              </div>
+                <ItemList 
+                refresh={this.refreshList}
+                showDetails={this.showDetails}
+                items={this.state.items} />
+                
+                
+               
+                {/* Start of list part */}
+                <div className="columns is-gapless is-multiline">
+
+                    <div className="column is-half">
+                        <AddItem item={this.item} finishAdd={this.refreshList}/>
+                    </div>
+
+                    <div className="column is-half">
+                        <Cost cost={this.cost} />
+                    </div>
+
+                </div>
+
+                <div className="column">
+                  <div className="control is-centered">
+                    <CompletedButton playing={this.state.playing} startPlaying={this.startPlaying} />
+                  </div>
+                </div>
+            
             </div>
         </Router>
         </div>
     }
 }
-
-
-export default App

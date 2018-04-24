@@ -1,4 +1,5 @@
 import React from 'react'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 class Cost extends React.Component {
     constructor (props) {
@@ -21,13 +22,13 @@ class Cost extends React.Component {
     render() {
       return <div>
         
-        <div class="column">
-           <div class="field has-addons">
-             <div class="control">
-               <input onChange={this.handleChange} class="input is-large" type="text"  name="Add price" placeholder="$--.--"/>
+        <div className="column">
+           <div className="field has-addons">
+             <div className="control">
+               <input onChange={this.handleChange} className="input is-medium" type="text"  name="Add price" placeholder="$--.--"/>
              </div>
-             <div class="control">
-               <a class="button is-large" type="submit" value="=">
+             <div className="control">
+               <a className="button is-medium" type="submit" value="=">
                  Spent
                </a>
              </div>
