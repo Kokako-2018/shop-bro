@@ -16,7 +16,6 @@ export default function ListItem ({item, refresh}) {
                     </ul>
                     
                     <button className="button is-dark" onClick={() =>deleteItem(item.id, refresh)} >Delete</button>
-                    {/* <button onClick={() =>updateItem(item.id, refresh)} >Update</button> */}
                     <br/>
                 </div>
             </div>

@@ -31,13 +31,13 @@ export default class UpdateItem extends React.Component {
         const {item} = this.state
         console.log(item, 'hello')
         return (
-            <div className='update-widget'>
+            <div>
                 <form>
                     <p>
                         <input name="item" value={item.item} />
                         <input name="cost" value={item.cost} />
+                        <button onClick={() =>updateItem(item.id, refresh)} >Update</button>
                     </p>
-                
                 </form>
             </div>
         )

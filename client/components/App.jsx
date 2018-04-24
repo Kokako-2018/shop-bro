@@ -25,9 +25,9 @@ export default class App extends React.Component {
             activeItem: null,
             detailsVisible: false,
             addItemVisible: false,
-            showEdit: false,
-            playing: false,
-            updateWidgetVisible: false
+            editItem: null,
+            editItemVisible: false,
+            playing: false
         }
         this.refreshList = this.refreshList.bind(this)
         this.showDetails = this.showDetails.bind(this)
@@ -85,12 +85,17 @@ export default class App extends React.Component {
         this.setState({playing: !this.state.playing})
     }    
 
-    showUpdateItem() {
-        this.setState({
-            updateWidgetVisible: true
-        })
+    showEditForm (item) {
+        this.setState({ editItemVisible: true, editItem: item })
     }
     
+    editItem (item) {
+        api.updateItem(item, (error) => {
+          error ? this.setState({error}) : this.refreshList()
+          this.setState({editItemVisible: false})
+        })
+      }
+
     // makeCostForm(item) {
     //     item.id = item.cost.length + 1
     //     items.push(item)
@@ -130,7 +135,8 @@ export default class App extends React.Component {
                 <ItemList 
                 refresh={this.refreshList}
                 showDetails={this.showDetails}
-                items={this.state.items} />
+                items={this.state.items} 
+                showEditForm={this.showEditForm.bind(this)}/>
                 
                 
                
