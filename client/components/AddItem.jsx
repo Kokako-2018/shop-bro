@@ -28,7 +28,7 @@ export default class AddItem extends React.Component {
       this.setState({
         item: {
           item: '',
-          cost: null
+          cost: ''
         }
       })
     }
