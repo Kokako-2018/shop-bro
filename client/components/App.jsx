@@ -5,11 +5,10 @@ import Home from "./Home"
 import AddItem from './AddItem'
 import Cost from './Cost'
 import ErrorMessage from './ErrorMessage'
-import ItemDetails from './ItemDetails'
 import CompletedButton from './CompletedButton'
 import ItemList from './ItemList'
 import ListItem from './ListItem'
-import UpdateItem from './UpdateItem'
+
 
 
 import {getItems} from '../api'
@@ -25,9 +24,8 @@ export default class App extends React.Component {
             activeItem: null,
             detailsVisible: false,
             addItemVisible: false,
-            showEdit: false,
-            playing: false,
-            updateWidgetVisible: false
+            updateWidgetVisible: false,
+            playing: false
         }
         this.refreshList = this.refreshList.bind(this)
         this.showDetails = this.showDetails.bind(this)
@@ -61,6 +59,12 @@ export default class App extends React.Component {
     })
     }
 
+    showUpdateItem () {
+        this.setState ({
+            updateWidgetVisible: true
+        })
+    }
+
     showDetails (item) {
     this.setState({
         activeItem: item,
@@ -85,12 +89,17 @@ export default class App extends React.Component {
         this.setState({playing: !this.state.playing})
     }    
 
-    showUpdateItem() {
-        this.setState({
-            updateWidgetVisible: true
-        })
+    showEditForm (item) {
+        this.setState({ editItemVisible: true, editItem: item })
     }
     
+    editItem (item) {
+        api.updateItem(item, (error) => {
+          error ? this.setState({error}) : this.refreshList()
+          this.setState({editItemVisible: false})
+        })
+      }
+
     // makeCostForm(item) {
     //     item.id = item.cost.length + 1
     //     items.push(item)
@@ -130,7 +139,14 @@ export default class App extends React.Component {
                 <ItemList 
                 refresh={this.refreshList}
                 showDetails={this.showDetails}
-                items={this.state.items} />
+                items={this.state.items} 
+                showEditForm={this.showEditForm.bind(this)}/>
+                
+                {/* {this.state.detailsVisible && <span>
+                <ItemDetails isVisible={this.state.detailsVisible} 
+                hideDetails={this.hideDetails}
+                items={this.state.activeItem} />
+                </span>} */}
                 
                 
                
