@@ -1,7 +1,8 @@
 import React from 'react'
 import {deleteItem, updateItem} from '../api'
 import App from './App'
-import UpdateItem from './UpdateItem'
+import ItemList from './ItemList'
+
 
 export default class ListItem extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ export default class ListItem extends React.Component {
         this.state= {
             showForm: false,
             // editItem: {...props.item}
-            editItem: props.item
+            editItem: props.item,
+            refresh: props.refresh
         }
         this.toggleForm = this.toggleForm.bind(this)
         this.submitEdit = this.submitEdit.bind(this)
@@ -35,11 +37,11 @@ export default class ListItem extends React.Component {
 
     render() {
         const {editItem, showForm} = this.state
-        const {item} = this.props
+        const {item, refresh} = this.props
         return <div className="content">
             <div className="block">
-                <div class="columns">
-                    <div class="column is-half is-offset-one-quarter">
+                <div className="columns">
+                    <div className="column is-half is-offset-one-quarter">
                         {
                         showForm
                         ? <form className="column is-6 is-mobile"onSubmit={this.submitEdit}>
@@ -63,6 +65,7 @@ export default class ListItem extends React.Component {
     }
 }
 
+//Old Code
 // export default function ListItem ({item, refresh}) {
 
 //     return (

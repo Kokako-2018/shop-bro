@@ -5,11 +5,10 @@ import Home from "./Home"
 import AddItem from './AddItem'
 import Cost from './Cost'
 import ErrorMessage from './ErrorMessage'
-import ItemDetails from './ItemDetails'
 import CompletedButton from './CompletedButton'
 import ItemList from './ItemList'
 import ListItem from './ListItem'
-import UpdateItem from './UpdateItem'
+
 
 
 import {getItems} from '../api'
@@ -149,7 +148,7 @@ export default class App extends React.Component {
                 items={this.state.activeItem} />
                 </span>} */}
                 
-                {/* <UpdateItem /> */}
+                
                
                 {/* Start of list part */}
                 <div className="columns is-gapless is-multiline">
