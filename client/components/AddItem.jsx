@@ -14,6 +14,7 @@ export default class AddItem extends React.Component {
             }
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleChangeTwo = this.handleChangeTwo.bind(this)
         this.addItem = this.addItem.bind(this)
     }
 
@@ -23,12 +24,18 @@ export default class AddItem extends React.Component {
         this.setState({item: newItem})
     }
 
+    handleChangeTwo(e) {
+      let newCost = {}
+      newCost[e.target.name] = e.target.value
+      this.setState({cost: newCost})
+  }
+
     addItem (e) {
       appendItem(this.state.item, this.props.finishAdd)
       this.setState({
         item: {
           item: '',
-          cost: ''
+          cost: null
         }
       })
     }
@@ -36,14 +43,15 @@ export default class AddItem extends React.Component {
     render() {
       return <div>
         <br/>
-         <div className="column">
+         <div className="column is-mobile">
            <div className="field has-addons">
              
 
-               <input onChange={this.handleChange} className="input is-medium" type="text" name="item" value={this.state.item.item}/>
+               <input onChange={this.handleChange} className="input is-medium" type="text" name="item" placeholder="Enter item" value={this.state.item.item}/>
+               <input onChange={this.handleChangeTwo} className="input is-medium" type="text" name="cost" placeholder="Enter cost" value={this.state.item.cost}/>
              
              <div className="control">
-               <a className="button is-medium is-primary is-outlined" onClick={this.addItem} type="submit" value="add item">
+               <a className="button is-medium is-primary is-outlined is-mobile" onClick={this.addItem} type="submit" value="add item">
                  Add
                </a>
              </div>

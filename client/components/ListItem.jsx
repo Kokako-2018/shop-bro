@@ -39,9 +39,8 @@ export default class ListItem extends React.Component {
         const {editItem, showForm} = this.state
         const {item, refresh} = this.props
         return <div className="content">
-            <div className="block">
                 <div className="columns">
-                    <div className="column is-half is-offset-one-quarter">
+                    <div className="column is-offset-one-quarter is-half is-mobile">
                         {
                         showForm
                         ? <form className="column is-6 is-mobile"onSubmit={this.submitEdit}>
@@ -55,13 +54,12 @@ export default class ListItem extends React.Component {
                             <li className="is-size-5">Cost: {`${item.cost}`}</li>
                         </ul>
                         }
-                        <button className="button is-warning" onClick={this.toggleForm}>{showForm ? "Cancel" : "Edit"}</button>    
-                        <button className="button is-dark" onClick={() =>deleteItem(item.id, refresh)} >Delete</button>
+                        <button className="button is-info is-3" onClick={this.toggleForm}>{showForm ? "Cancel" : "Edit"}</button>    
+                        <button className="button is-dark is-3" onClick={() =>deleteItem(item.id, refresh)} >Delete</button>
                         <br/>
                     </div>
                 </div>
             </div>
-        </div>
     }
 }
 
