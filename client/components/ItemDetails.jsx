@@ -6,7 +6,7 @@ export default class ItemDetails extends React.Component {
     super(props)
     this.state = {
       showForm: false,
-      item: props.item
+      item: {...props.item}
     }
     this.updateDetails = this.updateDetails.bind(this)
   }
@@ -23,8 +23,8 @@ export default class ItemDetails extends React.Component {
 
   render() {
     const {isVisible, hideDetails} = this.props
-    const {showForm, widget} = this.state
-    console.log( 'working')
+    const {showForm} = this.state
+    console.log(props, 'working')
 
     return <div>
       {showForm

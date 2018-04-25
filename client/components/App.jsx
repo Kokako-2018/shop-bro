@@ -143,12 +143,13 @@ export default class App extends React.Component {
                 items={this.state.items} 
                 showEditForm={this.showEditForm.bind(this)}/>
                 
-                {/* {this.state.detailsVisible && <span> */}
+                {/* {this.state.detailsVisible && <span>
                 <ItemDetails isVisible={this.state.detailsVisible} 
                 hideDetails={this.hideDetails}
-                item={this.state.activeItem} />
-                {/* </span>} */}
+                items={this.state.activeItem} />
+                </span>} */}
                 
+                {/* <UpdateItem /> */}
                
                 {/* Start of list part */}
                 <div className="columns is-gapless is-multiline">
